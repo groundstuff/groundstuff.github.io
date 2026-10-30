@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="google-site-verification" content="2uDRiYxN2C7kGeDbI6FaVxxPQHzmELDevLTWV0dWlzk" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8GY6ZQBGN2"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-8GY6ZQBGN2');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GroundStuff (GS) — krossovka va streetwear | O‘zbekiston</title>
 <meta name="description" content="GroundStuff (GS) — O‘zbekistonda krossovka va streetwear do‘koni. Yangi modellar Instagram va Telegram kanalimizda. Buyurtma uchun bog‘laning.">
@@ -57,14 +64,21 @@ footer{margin-top:28px;font-size:12px;color:var(--muted)}
   <h1>GroundStuff</h1>
   <p>Trenddagi va classic krossovkalar. Yangi modellar va buyurtma — quyidagi havolalarda.</p>
 
-  <a class="btn ig" href="https://www.instagram.com/groundstuff.store.uz" target="_blank" rel="noopener">Instagram</a>
-  <a class="btn tg" href="https://t.me/groundstuffstoreuz" target="_blank" rel="noopener">Telegram kanal</a>
-  <a class="btn tt" href="https://www.tiktok.com/@groundstuffstoreuz" target="_blank" rel="noopener">TikTok</a>
-  <a class="btn rv" href="https://t.me/groundstuffotziv" target="_blank" rel="noopener">★ Mijozlar sharhlari</a>
-  <a class="btn ad" href="https://t.me/groundstuff_admin" target="_blank" rel="noopener">Admin bilan yozish</a>
-  <a class="btn call" href="tel:+998889080881">Qo‘ng‘iroq: +998 88 908 08 81</a>
+  <a class="btn ig" data-ev="instagram_click" href="https://www.instagram.com/groundstuff.store.uz" target="_blank" rel="noopener">Instagram</a>
+  <a class="btn tg" data-ev="telegram_click" href="https://t.me/groundstuffstoreuz" target="_blank" rel="noopener">Telegram kanal</a>
+  <a class="btn tt" data-ev="tiktok_click" href="https://www.tiktok.com/@groundstuffstoreuz" target="_blank" rel="noopener">TikTok</a>
+  <a class="btn rv" data-ev="reviews_click" href="https://t.me/groundstuffotziv" target="_blank" rel="noopener">★ Mijozlar sharhlari</a>
+  <a class="btn ad" data-ev="admin_click" href="https://t.me/groundstuff_admin" target="_blank" rel="noopener">Admin bilan yozish</a>
+  <a class="btn call" data-ev="call_click" href="tel:+998889080881">Qo‘ng‘iroq: +998 88 908 08 81</a>
 
   <footer>© GroundStuff (GS), O‘zbekiston</footer>
 </main>
+<script>
+document.querySelectorAll('a[data-ev]').forEach(function(a){
+  a.addEventListener('click',function(){
+    try{gtag('event',a.getAttribute('data-ev'),{transport_type:'beacon'});}catch(e){}
+  });
+});
+</script>
 </body>
 </html>
